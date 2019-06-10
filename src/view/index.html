@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <% for (let item of htmlWebpackPlugin.files.js) { %>
+    <link rel="preload" href="<%= item %>" as="script">
+    <% } %>
+
+    <% for (let item of htmlWebpackPlugin.files.css) { %>
+    <link rel="preload" href="<%= item %>" as="style">
+    <% } %>
+
+</head>
+<body>
+
+<main role="main" class="home">
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-4">
+                <h1 class="home__logo">Front End, JavaScript Developer - Bilal Uçar</h1>
+            </div>
+            <div class="col-8">
+                <p>Merhaba,</p>
+
+                <p>Ben Bilal Uçar. Testinium 'da Front End Developer olarak çalışıyorum. Yaptığım işlerin inanlar
+                    tarafından sevilip kullanılması en büyük motivasyon kaynağım.</p>
+
+                <p>Çalıştığım markalar: </p>
+
+                <div class="clearfix">
+                    Buraya markalar gelecek!
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-4">
+                <h3>
+                    Yeteneklerim</h3>
+            </div>
+            <div class="col-8">
+                <h4>
+                    Front End Development</h4>
+                <p>
+                    I develop fast interactive front ends, using the latest technologies and techniques to reduce page
+                    load time. I use my knowledge and tools to save time in development, including preprocessors and my
+                    own custom framework to kick start a project.</p>
+                <div class="row -small">
+                    <div class="col-6">
+                        <p class="home__list-title bold">Yetenekler</p>
+                        <ul>
+                            <li><p>HTML5, CSS, Bootstrap</p></li>
+                            <li><p>JavaScript, jQuery</p></li>
+                            <li><p>Angular 2+, React</p></li>
+                            <li><p>SASS, LESS</p></li>
+                            <li><p>WordPress</p></li>
+                            <li><p>Webpack</p></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <p class="home__list-title bold">Araçlar</p>
+                        <ul>
+                            <li><p>Git (GitHub, GitLab)</p></li>
+                            <li><p>WebStorm</p></li>
+                            <li><p>JIRA</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-4">
+                <h3>
+                    İletişim</h3>
+            </div>
+            <div class="col-8">
+                <p>Istanbul' da calisiyorum falan filan.</p>
+                <p><a href="mailto:mail@bilalucar.com.tr"
+                      class="bold">mail@bilalucar.com.tr</a><br><strong>+90 539 865 1530</strong></p>
+                <p>Atasehir/Istanbul</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<% for (let item of htmlWebpackPlugin.files.css) { %>
+<link rel="stylesheet" href="<%= item %>">
+<% } %>
+
+<% for (let item of htmlWebpackPlugin.files.js) { %>
+<script type="text/javascript" src="<%= item %>" defer="defer"></script>
+<% } %>
+</body>
+</html>

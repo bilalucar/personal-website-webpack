@@ -1,0 +1,16 @@
+/* home page css */
+
+.home {
+  &__logo {
+    width: 100px;
+    height: 100px;
+    background: url('/images/logo.png') no-repeat center top;
+    background-size: 100px 100px;
+    text-indent: -9999px;
+  }
+
+  &__list-title {
+    margin-bottom: 0;
+    font-weight: 400;
+  }
+}

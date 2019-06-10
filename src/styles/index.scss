@@ -1,0 +1,16 @@
+@import '~bootstrap/scss/bootstrap';
+@import './fonts';
+@import './theme';
+
+@import './header';
+@import './home';
+
+body {
+    padding-top: 4.5rem;
+    min-height: 1000px;
+    color: $primary-color;
+}
+
+main {
+    overflow: hidden;
+}

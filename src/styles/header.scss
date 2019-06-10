@@ -1,0 +1,22 @@
+
+.navbar, .navbar.navbar-light {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 3px 3px;
+  padding: 1rem 0;
+  font-family: roboto_slabbold, sans-serif;
+
+  .navbar-nav {
+    &__navbar-item {
+      &__navbar-link {
+        color: $primary-color;
+        cursor: pointer;
+      }
+
+      &.active {
+        &__navbar-link {
+          background-color: green;
+        }
+      }
+    }
+  }
+}
