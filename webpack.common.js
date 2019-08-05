@@ -6,6 +6,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+
 const devMode = process.env.NODE_ENV !== 'production';
 
 // define webpack plugins
@@ -15,6 +20,10 @@ const extractCss = new MiniCssExtractPlugin({
     filename: devMode ? '[name].css' : '[name].[contenthash].css',
     chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css'
 });
+
+const PUBLIC_PATH = 'https://bilalucar.com.tr';
+const themeColor = '#4a90e2';
+const bgColor = '#ffffff';
 
 const defaultHtmlWebPackOptions = {
     inject: false,
@@ -28,8 +37,34 @@ const defaultHtmlWebPackOptions = {
     } : false,
     title: 'Bilal Uçar - Front End Developer.',
     meta: {
-        'description': ''
-    }
+        'description': "Angular, React, JavaScript, SCSS, Ionic, Firebase gibi teknolojileri kullanıyorum. Front End alanında kendimi geliştirmeye çalışıyorum."
+    },
+    themeColor,
+    PUBLIC_PATH,
+    preCache: {
+        cacheId: 'website-cache-id',
+        dontCacheBustUrlsMatching: /\.\w{8}\./,
+        filename: 'service-worker.js',
+        minify: true,
+        navigateFallback: `${PUBLIC_PATH}index.html`,
+        staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+    },
+    manifest: {
+        name: "Bilal Uçar",
+        short_name: "@fendcoder",
+        description: 'Give us a description',
+        background_color: bgColor,
+        theme_color: themeColor,
+        'theme-color': themeColor,
+        start_url: PUBLIC_PATH,
+        icons: [
+            {
+                src: path.resolve('src/images/icons/icon-512x512.png'),
+                sizes: [72, 96, 128, 144, 152, 192, 384, 512],
+                destination: path.join('assets', 'icons'),
+            },
+        ],
+    },
 };
 
 const templateConfig = {
@@ -85,6 +120,12 @@ const config = {
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
+        }),
+        new SWPrecacheWebpackPlugin(defaultHtmlWebPackOptions.preCache),
+        new WebpackPwaManifest(defaultHtmlWebPackOptions.manifest),
+        new WorkboxWebpackPlugin.InjectManifest({
+            swSrc: "./src/src-sw.js",
+            swDest: "service-worker.js"
         })
     ],
     resolve: {
