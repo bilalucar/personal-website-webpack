@@ -9,7 +9,9 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 
-const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+
+let FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -50,8 +52,8 @@ const defaultHtmlWebPackOptions = {
         staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
     },
     manifest: {
-        name: "Bilal Uçar",
-        short_name: "@fendcoder",
+        name: "Bilal Uçar - Fron End Developer",
+        short_name: "Bilal Uçar",
         description: 'Give us a description',
         background_color: bgColor,
         theme_color: themeColor,
@@ -126,7 +128,8 @@ const config = {
         new WorkboxWebpackPlugin.InjectManifest({
             swSrc: "./src/src-sw.js",
             swDest: "service-worker.js"
-        })
+        }),
+        new FaviconsWebpackPlugin('./src/images/logo.jpg')
     ],
     resolve: {
         extensions: ['.js'],
