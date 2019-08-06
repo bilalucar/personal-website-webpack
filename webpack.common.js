@@ -39,7 +39,8 @@ const defaultHtmlWebPackOptions = {
     } : false,
     title: 'Bilal Uçar - Front End Developer.',
     meta: {
-        'description': "Angular, React, JavaScript, SCSS, Ionic, Firebase gibi teknolojileri kullanıyorum. Front End alanında kendimi geliştirmeye çalışıyorum."
+        description: "Angular, React, JavaScript, SCSS, Ionic, Firebase gibi teknolojileri kullanıyorum. Front End alanında kendimi geliştirmeye çalışıyorum.",
+        author: "Bilal Uçar"
     },
     themeColor,
     PUBLIC_PATH,
