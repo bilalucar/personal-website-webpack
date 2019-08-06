@@ -19,6 +19,9 @@
     <link rel="preload" href="<%= item %>" as="style">
     <% } %>
 
+    <!-- JSON LD Data -->
+    <%= require('ejs-loader!./jsonld/_home.ejs')() %>
+
 </head>
 <body>
 
@@ -89,8 +92,8 @@
                         <ul>
                             <li><p>HTML5, CSS, Bootstrap</p></li>
                             <li><p>JavaScript, jQuery</p></li>
-                            <li><p>Angular 2+, React</p></li>
-                            <li><p>SASS, LESS</p></li>
+                            <li><p>Angular 2+, React, Ionic</p></li>
+                            <li><p>SCSS, LESS</p></li>
                             <li><p>Webpack</p></li>
                             <li><p>WordPress</p></li>
                         </ul>
@@ -116,21 +119,26 @@
                 <h3 class="home__title wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0s">Hakkımda</h3>
             </div>
             <div class="col-12 col-md-8 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
-                <p>Bilgisayarla küçük yaşlarda tanıştım. Bilgisayarı küçükken ödev yapmak, müzik dinlemek ve oyun
-                    oynamak için
-                    kullansam da orta okulun sonlarında artık web sitesi kurmayı öğrenip kendime web siteleri yapmaya
-                    başladım.
-                    İşin en eğlenceli tarafı ücretsiz siteler alıp (tr.gg) içerisine kayan yazı, iframe gibi HTML kodlar
-                    yapıştırmaktı.</p>
+                <p>İlkokul 'da babamın eve bilgisayar almasıyla birlikte büyüklerin her bayram sorduğu o standart soru olan
+                    "Büyüyünce ne olmak istiyorsun?" sorusuna yanıt bulmuştum. Bilgisayar başında saatlerce vakit geçirip sıkılmadan
+                    ücretsiz web siteleri açıp hazır HTML kodlarını yapıştırarak kendimce web sitesi tasarlıyordum.</p>
+
+                <p>Lisede biraz daha ilerletip WordPress, Blogger gibi platformlarla çalıştım. HTML, CSS JavaScript gibi
+                    teknolojileri hazır tasarımlar üzerinde değişiklik yaparak devam ettim.</p>
 
                 <p>Üniversiteyi Süleyman Demirel Üniversitesi, Bilgisayar Mühendisliği bölümünde okudum. Burada farklı
                     programlama
                     dilleri ve teknolojilerle uğraştık. Üniversite okurken sektörle alakalı farklı eğitimlere ve
-                    etkinliklere katılmaya çalıştım.</p>
+                    etkinliklere katılmaya çalıştım. </p>
+
+                <p>Üniversiteye devam ederken Isparta 'da TEKNOVOL adında bir dijital ajansta
+                    part-time olarak çalıştım. TEKNOVOL 'de WordPress başta olmak üzere HTML, CSS, JS, SEO alanlarında çalıştım.
+                    Çalışmalarımdan öğrendiklerimi bu ajansın bir projesi olan <a href="https://webmaster.kitchen">webmaster.kitchen</a>
+                    'de makale olarak yazdım. Web ile ilgili konularda aylık toplantıların yapıldığı, yeni teknolojilerin konuşulduğu
+                    Webmaster Meetup 'lar düzenledik. Aktif olarak organizatör görevi üstlendim.</p>
 
                 <p>Üniversite bittikten sonra staj yaptığım yer olan, eski adıyla Saha Bilgi Teknolojileri 'nde
-                    çalışmaya başladım ve
-                    hala çalışmaktayım.</p>
+                    çalışmaya başladım ve hala çalışmaktayım. Angular, React, Webpack, SCSS, ES6 gibi teknolojilerle çalışıyorum.</p>
             </div>
         </div>
     </section>
@@ -143,8 +151,7 @@
                 <p>Benimle iletişime geçmek istiyorsanız, aşağıdaki iletişim seçeneklerinden birini kullanabilirsiniz.
                     Size en kısa zamanda yanıt vermeye çalışacağım.</p>
                 <p><a href="mailto:mail@bilalucar.com.tr">mail@bilalucar.com.tr</a></p>
-                <p><a href="tel:+905398651530"
-                      class="bold">+90 539 865 1530</a></p>
+                <p><a href="tel:+905398651530" class="bold">+90 539 865 1530</a></p>
                 <p>Ataşehir/İstanbul</p>
             </div>
         </div>
@@ -156,10 +163,11 @@
                 <div class="seperator"></div>
             </div>
             <div class="col-12 col-md-4">
-                <p>© 2019 - Bilal Uçar</p>
+                <p>Copyright © 2019 Bilal Uçar.</p>
             </div>
             <div class="col-12 col-md-8">
-                <p><a href="https://github.com/bilalucar" rel="nofollow">GitHub</a>
+                <p>
+                    <a href="https://github.com/bilalucar" rel="nofollow">GitHub</a>
                     <span> • </span>
                     <a href="https://www.linkedin.com/in/bilalucar" rel="nofollow">LinkedIn</a>
                 </p>
