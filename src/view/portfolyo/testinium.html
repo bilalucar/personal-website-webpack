@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="<%= htmlWebpackPlugin.options.meta.description %>">
+    <meta name="author" content="<%= htmlWebpackPlugin.options.meta.author %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="<%= htmlWebpackPlugin.options.themeColor %>">
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <% for (let item of htmlWebpackPlugin.files.js) { %>
+    <link rel="preload" href="<%= item %>" as="script">
+    <% } %>
+
+    <% for (let item of htmlWebpackPlugin.files.css) { %>
+    <link rel="preload" href="<%= item %>" as="style">
+    <% } %>
+
+    <!-- JSON LD Data -->
+    <%= require('ejs-loader!../jsonld/_testinium.ejs')() %>
+
+</head>
+<body>
+
+<!-- JSON LD Data -->
+<%= require('ejs-loader!../components/_header.ejs')() %>
+
+<main role="main" class="home">
+    <section class="container">
+        <div class="row py-5">
+            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start wow fadeInUp animated"
+                 data-wow-duration="1s" data-wow-delay="0s">
+                <div>
+                    <img class="img-fluid" src="/images/testinium.png" alt="Testinium"/>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
+                <p><a href="https://testinium.com" target="_blank">Testinium</a>,
+                    test otomasyonu konusunda planlama, raporlama ve yönetim arayüzü sunan bir ürün.</p>
+
+                <p>Bu projenin otomasyon tarafında (testinium.io) Angular, TypeScript, CSS, HTML, jQuery, JavaScript, Bootstrap ve Git gibi teknolojileri/kütüphaneleri kullanarak
+                projenin geliştirilmesi ve hatalarının çözülmesinde katkıda bulundum. </p>
+
+                <p>Bu projenin web sitesini (testinium.com) Webpack, SCSS, ES6, EJS gibi teknolojiler kullanarak statik bir
+                yapı geliştirilmesinde katkıda bulundum.</p>
+            </div>
+        </div>
+        <div class="row py-5">
+            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start wow fadeInUp animated"
+                 data-wow-duration="1s" data-wow-delay="0s">
+                <div>
+                    <img class="img-fluid" src="/images/loadium.png" alt="Loadium"/>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
+                <p><a href="https://loadium.com" target="_blank">Loadium</a>,
+                    yük testi yapmanızı ve yaptığınız testlerin raporlanması/yönetimini sağlayan bir ürün.</p>
+
+                <p>Bu projenin otomasyon tarafında (loadium.io) Angular, TypeScript, CSS, HTML, jQuery, JavaScript, Bootstrap ve Git gibi teknolojileri/kütüphaneleri kullanarak
+                projenin geliştirilmesi ve hatalarının çözülmesinde katkıda bulundum. </p>
+
+                <p>Bu projenin web sitesini (loadium.com) WordPress kullanarak tasarladım.</p>
+            </div>
+        </div>
+        <div class="row py-5">
+            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start wow fadeInUp animated"
+                 data-wow-duration="1s" data-wow-delay="0s">
+                <div>
+                    <img class="img-fluid" src="/images/dashboard.png" alt="QA Dashboard"/>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
+                <p>QA Dashboard, bir yazılım projesinin kalitesinin hereks tarafından okunabilir ve anlaşılabilir hale
+                    getirmek için farklı ortamlardan ve araçlardan kaliteyle ilgili ölçümleri toplayıp grafiklerle ve metriklerleri gösteren bir ürün.</p>
+
+                <p>Bu projede Angular, TypeScript, SCSS, HTML, JavaScript, NG Zorro, Echars ve Git gibi teknolojileri/kütüphaneleri kullanarak
+                projenin geliştirilmesinde etkin rol oynadım. </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <%= require('ejs-loader!../components/_footer.ejs')() %>
+</main>
+
+<% for (let item of htmlWebpackPlugin.files.css) { %>
+<link rel="stylesheet" href="<%= item %>">
+<% } %>
+
+<% for (let item of htmlWebpackPlugin.files.js) { %>
+<script type="text/javascript" src="<%= item %>" defer="defer"></script>
+<% } %>
+</body>
+</html>

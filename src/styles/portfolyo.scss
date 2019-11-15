@@ -1,0 +1,15 @@
+/* portfolyo page css */
+
+.portfolyo {
+  &__item-content {
+    position: relative;
+  }
+
+  &__read-more {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 14px;
+    line-height: 2;
+  }
+}

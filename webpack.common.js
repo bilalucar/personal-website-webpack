@@ -11,7 +11,7 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
-let FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -74,6 +74,14 @@ const templateConfig = {
     index: {
         filename: 'index.html',
         template: './src/view/index.html',
+    },
+    portfolyo: {
+        filename: 'portfolyo/index.html',
+        template: './src/view/portfolyo/index.html',
+    },
+    testinium: {
+        filename: 'portfolyo/testinium.html',
+        template: './src/view/portfolyo/testinium.html',
     }
 };
 

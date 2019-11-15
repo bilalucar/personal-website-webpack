@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="<%= htmlWebpackPlugin.options.meta.description %>">
+    <meta name="author" content="<%= htmlWebpackPlugin.options.meta.author %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="<%= htmlWebpackPlugin.options.themeColor %>">
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <% for (let item of htmlWebpackPlugin.files.js) { %>
+    <link rel="preload" href="<%= item %>" as="script">
+    <% } %>
+
+    <% for (let item of htmlWebpackPlugin.files.css) { %>
+    <link rel="preload" href="<%= item %>" as="style">
+    <% } %>
+
+    <!-- JSON LD Data -->
+    <%= require('ejs-loader!../jsonld/_testinium.ejs')() %>
+
+</head>
+<body>
+
+<!-- Header -->
+<%= require('ejs-loader!../components/_header.ejs')() %>
+
+<main role="main" class="portfolyo">
+    <section class="container">
+        <div class="row py-5">
+            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start wow fadeInUp animated"
+                 data-wow-duration="1s" data-wow-delay="0s">
+                <div>
+                    <img class="img-fluid" src="/images/testinium.png" alt="Testinium"/>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
+                <div class="portfolyo__item-content">
+                    <p><b>Front End Developer, Full Tıme</b></p>
+                    <p>Testinium, Loadium, QA Dashboard gibi ürünleri geliştiren aynı zamanda danışmanlık
+                    ve eğitim gibi hizmetleri de veren Saha Bilgi Teknolojileri 'nde Front End Developer olarak çalışmaya devam ediyorum.</p>
+                    <p>07/2018 – Devam ediyor</p>
+                    <div class="portfolyo__read-more">
+                        <a href="/portfolyo/testinium.html">Detaylar >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row py-5">
+            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start wow fadeInUp animated"
+                 data-wow-duration="1s" data-wow-delay="0s">
+                <div>
+                    <img class="img-fluid" src="/images/teknovol.png" alt="Teknovol"/>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
+                <div class="portfolyo__item-content">
+                    <p><b>Web Developer, Part Time</b></p>
+                    <p><a href="https://teknovol.com.tr" target="_blank">Teknovol</a>,
+                        bir Dijital İnteraktif Ajans ve Web Tasarım şirketidir. Üniversitedeyken part time olarak
+                    Teknovol 'de Web Developer pozisyonunda çalıştım.</p>
+                    <p>10/2016–07/2018</p>
+                    <div class="portfolyo__read-more">
+                        <a href="/portfolyo/teknovol.html">Detaylar >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <%= require('ejs-loader!../components/_footer.ejs')() %>
+</main>
+
+<% for (let item of htmlWebpackPlugin.files.css) { %>
+<link rel="stylesheet" href="<%= item %>">
+<% } %>
+
+<% for (let item of htmlWebpackPlugin.files.js) { %>
+<script type="text/javascript" src="<%= item %>" defer="defer"></script>
+<% } %>
+</body>
+</html>
