@@ -82,6 +82,10 @@ const templateConfig = {
     testinium: {
         filename: 'portfolyo/testinium.html',
         template: './src/view/portfolyo/testinium.html',
+    },
+    teknovol: {
+        filename: 'portfolyo/teknovol.html',
+        template: './src/view/portfolyo/teknovol.html',
     }
 };
 
