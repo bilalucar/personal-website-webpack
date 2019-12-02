@@ -37,7 +37,7 @@ const defaultHtmlWebPackOptions = {
         processScripts: ['application/ld+json'],
         minifyJS: true
     } : false,
-    title: 'Bilal Uçar - Front End Developer.',
+    title: 'Bilal Uçar - Front End Developer | JavaScript | Angular',
     meta: {
         description: "Angular, React, JavaScript, SCSS, Ionic, Firebase gibi teknolojileri kullanıyorum. Front End alanında kendimi geliştirmeye çalışıyorum.",
         author: "Bilal Uçar"
@@ -82,6 +82,10 @@ const templateConfig = {
     testinium: {
         filename: 'portfolyo/testinium.html',
         template: './src/view/portfolyo/testinium.html',
+    },
+    teknovol: {
+        filename: 'portfolyo/teknovol.html',
+        template: './src/view/portfolyo/teknovol.html',
     }
 };
 
