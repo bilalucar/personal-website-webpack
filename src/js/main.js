@@ -20,3 +20,17 @@ const wow = new WOW({
             .catch(error => console.log('Service Worker registration failed:', error));
     }
 })();
+
+window.onload = function () {
+  if (window.location.pathname === '/') {
+    const menuItem = document.getElementById('home');
+
+    menuItem.classList.add('header__active');
+  }
+
+  if (window.location.pathname.includes('/portfolyo')) {
+    const menuItem = document.getElementById('portfolio');
+
+    menuItem.classList.add('header__active');
+  }
+};

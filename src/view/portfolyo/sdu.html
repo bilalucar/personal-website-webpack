@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="<%= htmlWebpackPlugin.options.meta.description %>">
+  <meta name="author" content="<%= htmlWebpackPlugin.options.meta.author %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="<%= htmlWebpackPlugin.options.themeColor %>">
+
+  <title><%= htmlWebpackPlugin.options.title %></title>
+
+  <% for (let item of htmlWebpackPlugin.files.js) { %>
+  <link rel="preload" href="<%= item %>" as="script">
+  <% } %>
+
+  <% for (let item of htmlWebpackPlugin.files.css) { %>
+  <link rel="preload" href="<%= item %>" as="style">
+  <% } %>
+
+  <!-- JSON LD Data -->
+  <%= require('ejs-loader!../jsonld/_testinium.ejs')() %>
+
+</head>
+<body>
+
+<!-- JSON LD Data -->
+<%= require('ejs-loader!../components/_header.ejs')() %>
+
+<main role="main" class="home">
+  <section class="container">
+    <div id="sdu" class="row py-5">
+      <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start wow fadeInUp animated"
+           data-wow-duration="1s" data-wow-delay="0s">
+        <div>
+          <img class="img-fluid" src="/images/sdu.png" alt="Süleyman Demirel Üniversitesi"/>
+        </div>
+      </div>
+      <div class="col-12 col-md-8 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
+        <p>Süleyman Demirel Üniversitesi ‘nde Bilgisayar Mühendisliği bölümünü bitirdim. Aldığım dersler ve ders
+          içeriklerini incelemek için aşağıdaki bağlantıya tıklayabilirsiniz.
+          <br> <a target="_blank" href="/images/lisans-ders-icerikleri.pdf">Ders İçerikleri</a></p>
+      </div>
+    </div>
+  </section>
+  <section class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <h3 class="home__title wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0s">Eğitim / Konferans</h3>
+      </div>
+      <div class="col-12 col-md-8 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
+        <h4>Bilişim Mucitleri</h4>
+        <p>Üniversitedeyken 28 Kasım 2016 – 3 Aralık 2016 tarihleri arasında Bilişim Mucitleri Eğitimi‘ne katıldım.
+          Bilişim Mucitleri, Habitat Derneği ve Samsung 'un ülkemizdeki mobil yazılımcı sayısını arttırmak ve mobil
+          yazılım alanında girişimciliği desteklemek için bir araya gelerek oluşturdukları bir projedir.
+          Bu proje ile beş günün sonunda temel düzeyde Android programlama anlatabilir bir düzeye geldim. Sonrasında
+          üniversiteye döndükten sonra verdiğim eğitimlerle katılımcılara temel düzeyde Android programlama
+          öğrettim.</p>
+        <br>
+        <h4>AB2017 / Aksaray - Modern Web ve PHP</h4>
+        <p>Üniversitelerde bilgi teknolojileri konusunda ilgili grupları bir araya getirerek, bilgi teknolojilerinde ulusal altyapı, araştırma ve geliştirme, üretim, eğitim ve kullanım alanlarını tüm boyutlarıyla tanıtmak, tartışmak, birikimleri paylaşmak ve ortak politikalar oluşturmak amaçlarıyla her sene Akademik Bilişim Kurs ve Konferansları düzenleniyor.
+          Bende Akademik Bilişim 2017 'de Modern Web ve PHP kursuna katıldım. 4 günlük bir eğitim gördüm.
+          Ömer Çıtak ve Eray Aydın 'dan çok keyifli bir kurs aldık. Bir sunucuya attığımız istekten tutun MVC yapısına, Laravel’den PHP açıklarına birçok şey öğrendik. </p>
+        <br>
+        <p>Bunlar dışında ayrıntısına girmek istemediğim BİLMÖK 2018, İzmir Bilişim Zirvesi gibi konferanslara da katıldım.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <%= require('ejs-loader!../components/_footer.ejs')() %>
+</main>
+
+<% for (let item of htmlWebpackPlugin.files.css) { %>
+<link rel="stylesheet" href="<%= item %>">
+<% } %>
+
+<% for (let item of htmlWebpackPlugin.files.js) { %>
+<script type="text/javascript" src="<%= item %>" defer="defer"></script>
+<% } %>
+</body>
+</html>

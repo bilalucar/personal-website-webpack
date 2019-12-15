@@ -2,7 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  padding: 20px;
+  background-color: #f6f6f6;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
 
   &__menu {
 
@@ -10,5 +12,9 @@
 
   &__menu-item {
     padding: 10px 20px;
+  }
+
+  &__active {
+    text-decoration: underline;
   }
 }

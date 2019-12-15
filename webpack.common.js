@@ -86,6 +86,10 @@ const templateConfig = {
     teknovol: {
         filename: 'portfolyo/teknovol.html',
         template: './src/view/portfolyo/teknovol.html',
+    },
+    sdu: {
+        filename: 'portfolyo/sdu.html',
+        template: './src/view/portfolyo/sdu.html',
     }
 };
 
