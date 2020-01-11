@@ -6,9 +6,9 @@ if (process === null) {
 }
 
 const config = {
-    user: process.env.ftpUser,
-    password: process.env.ftpPassword,
-    host: process.env.ftpHost,
+    user: process.env.FTP_USER,
+    password: process.env.FTP_PASSWORD,
+    host: process.env.FTP_HOST,
     port: 21,
     localRoot: __dirname + '/dist',
     remoteRoot: '/public_html/',

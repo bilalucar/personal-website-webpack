@@ -7,7 +7,7 @@
     "build-prod": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "build-dev": "cross-env NODE_ENV=development webpack --config webpack.dev.js",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js",
-    "deploy": "node deploy.js ftpHost=$FTP_HOST ftpUser=$FTP_USER ftpPassword=$FTP_PASSWORD"
+    "deploy": "node deploy.js"
   },
   "author": "",
   "license": "ISC",
