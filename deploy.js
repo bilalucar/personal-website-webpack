@@ -5,6 +5,11 @@ if (process === null) {
     return;
 }
 
+console.log(process.env);
+console.log(process.env.FTP_HOST);
+console.log(process.env.FTP_USER);
+console.log(process.env.FTP_PASSWORD);
+
 const config = {
     user: process.env.FTP_USER,
     password: process.env.FTP_PASSWORD,
