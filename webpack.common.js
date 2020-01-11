@@ -119,6 +119,10 @@ const config = {
             from: './src/assets/',
             to: 'assets',
             toType: 'dir'
+        },{
+            from: './src/.htaccess',
+            to: '.htaccess',
+            toType: 'file'
         }]),
         new ImageminPlugin({
             disable: devMode,
