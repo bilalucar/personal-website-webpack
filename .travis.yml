@@ -6,8 +6,9 @@ sudo: required
 branches:
   only:
     - master
-before_script:
+install:
   - npm install
-script:
+before_script:
   - npm run build-prod
-  - node deploy.js ftpHost=$FTP_HOST ftpUser=$FTP_USER ftpPassword=$FTP_PASSWORD
+script:
+  - node deploy.js ftpHost=FTP_HOST ftpUser=FTP_USER ftpPassword=FTP_PASSWORD
