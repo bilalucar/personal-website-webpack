@@ -11,4 +11,4 @@ install:
 before_script:
   - npm run build-prod
 script:
-  - node deploy.js ftpHost=FTP_HOST ftpUser=FTP_USER ftpPassword=FTP_PASSWORD
+  - node deploy.js ftpHost=${FTP_HOST} ftpUser=${FTP_USER} ftpPassword=${FTP_PASSWORD}
