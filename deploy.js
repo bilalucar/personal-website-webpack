@@ -1,15 +1,6 @@
 const FtpDeploy = require('ftp-deploy');
 const ftpDeploy = new FtpDeploy();
 
-if (process === null) {
-    return;
-}
-
-console.log(process.env);
-console.log(process.env.FTP_HOST);
-console.log(process.env.FTP_USER);
-console.log(process.env.FTP_PASSWORD);
-
 const config = {
     user: process.env.FTP_USER,
     password: process.env.FTP_PASSWORD,
@@ -22,7 +13,18 @@ const config = {
     forcePasv: true
 };
 
-ftpDeploy.deploy(config, function(err, res) {
+ftpDeploy.deploy(config, function (err, res) {
+    console.log('Test');
     if (err) console.log(err);
-    else console.log('finished:', res);
+});
+
+ftpDeploy.on("uploading", function(data) {
+    console.log('Total:', data.totalFilesCount);
+    console.log('Transferred', data.transferredFileCount);
+    console.log('Current File', data.filename);
+    console.log('----------------------------------------');
+});
+
+ftpDeploy.on("upload-error", function(data) {
+    console.log(data.err);
 });
