@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteRule ^$ https://bilalucar.com.tr/ [L]
+RewriteRule ^$ https://bilalucar.com/ [L]
 
 <IfModule mod_rewrite.c>
 RewriteEngine On

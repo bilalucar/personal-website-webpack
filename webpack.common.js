@@ -23,7 +23,7 @@ const extractCss = new MiniCssExtractPlugin({
     chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css'
 });
 
-const PUBLIC_PATH = 'https://bilalucar.com.tr';
+const PUBLIC_PATH = 'https://bilalucar.com';
 const themeColor = '#4a90e2';
 const bgColor = '#ffffff';
 
