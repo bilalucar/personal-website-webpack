@@ -1,7 +1,7 @@
 {
   "name": "personal-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "My Personal Web Site",
   "main": "./src/index.js",
   "scripts": {
     "build-prod": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
@@ -9,7 +9,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js",
     "deploy": "node deploy.js"
   },
-  "author": "",
+  "author": "Bilal Uçar",
   "license": "ISC",
   "dependencies": {
     "animate.css": "^3.7.2",
