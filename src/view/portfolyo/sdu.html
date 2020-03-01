@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="<%= htmlWebpackPlugin.options.themeColor %>">
-
+x
   <title><%= htmlWebpackPlugin.options.title %></title>
 
   <% for (let item of htmlWebpackPlugin.files.js) { %>
@@ -19,7 +19,7 @@
   <% } %>
 
   <!-- JSON LD Data -->
-  <%= require('ejs-loader!../jsonld/_testinium.ejs')() %>
+  <%= require('ejs-loader!../jsonld/_home.ejs')() %>
 
 </head>
 <body>
