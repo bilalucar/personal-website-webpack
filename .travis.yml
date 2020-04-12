@@ -3,6 +3,8 @@ node_js:
   - "10.14"
 dist: trusty
 sudo: required
+env:
+  - DENEME_ENV=$DENEME_ENV
 branches:
   only:
     - master
