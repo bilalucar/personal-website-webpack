@@ -7,14 +7,13 @@ const config = {
     host: process.env.FTP_HOST,
     port: 21,
     localRoot: __dirname + '/dist',
-    remoteRoot: '/public_html/',
+    remoteRoot: process.env.FTP_PATH,
     include: ['*', '**/*'],
     deleteRemote: true,
     forcePasv: true
 };
 
 ftpDeploy.deploy(config, function (err, res) {
-    console.log('Test');
     if (err) console.log(err);
 });
 

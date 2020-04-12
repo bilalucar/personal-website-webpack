@@ -4,12 +4,14 @@ node_js:
 dist: trusty
 sudo: required
 env:
-  - DENEME_ENV=$DENEME_ENV
+  - FTP_USER=$FTP_USER
+  - FTP_PASSWORD=$FTP_PASSWORD
+  - FTP_HOST=$FTP_HOST
+  - FTP_PATH=$FTP_PATH
 branches:
   only:
     - master
 install:
-  - echo ${DENEME_ENV}
   - npm install
 before_script:
   - npm run build-prod
