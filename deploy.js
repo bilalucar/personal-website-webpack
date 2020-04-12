@@ -1,6 +1,11 @@
 const FtpDeploy = require('ftp-deploy');
 const ftpDeploy = new FtpDeploy();
 
+console.log('calisti');
+
+console.log('process.env.FTP_HOST', process.env.FTP_HOST);
+
+
 const config = {
     user: process.env.FTP_USER,
     password: process.env.FTP_PASSWORD,
