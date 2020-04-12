@@ -7,7 +7,7 @@ branches:
   only:
     - master
 install:
-  - echo "${DENEME_ENV}"
+  - echo ${DENEME_ENV}
   - npm install
 before_script:
   - npm run build-prod
