@@ -1,19 +1,19 @@
 language: node_js
 node_js:
-  - "10.14"
+- "10.14"
 dist: trusty
 sudo: required
 env:
-  - FTP_USER=$FTP_USER
-  - FTP_PASSWORD=$FTP_PASSWORD
-  - FTP_HOST=$FTP_HOST
-  - FTP_PATH=$FTP_PATH
+- FTP_USER=$FTP_USER
+- FTP_PASSWORD=$FTP_PASSWORD
+- FTP_HOST=$FTP_HOST
+- FTP_PATH=$FTP_PATH
 branches:
   only:
-    - master
+  - master
 install:
-  - npm install
+- npm install
 before_script:
-  - npm run build-prod
+- npm run build-prod
 script:
-  - npm run deploy
+- npm run deploy
