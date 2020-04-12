@@ -1,8 +1,6 @@
 const FtpDeploy = require('ftp-deploy');
 const ftpDeploy = new FtpDeploy();
 
-console.log('process.env.DENEME_ENV', process.env.DENEME_ENV);
-
 const config = {
     user: process.env.FTP_USER,
     password: process.env.FTP_PASSWORD,
